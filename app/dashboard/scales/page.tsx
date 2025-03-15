@@ -1,27 +1,20 @@
 'use client'
-import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import {
     Tabs,
     TabsContent,
     TabsList,
     TabsTrigger,
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
+ 
     Popover,
     PopoverContent,
     PopoverTrigger,
     Button
 } from "@/components/ui/"
 
-import { Clock, MapPin, Phone, Trash, User, EllipsisVertical, BookDashed, Captions, Copy } from 'lucide-react';
+import { Trash, EllipsisVertical, Captions, Copy } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query'
 
-import { BookingEditForm } from "@/components/booking/booking-edit";
 
 import { ScaleAdd } from "@/components/scale/scale-add";
 import { deleteScale, duplicateScale, listMyScales, listScales } from "@/app/__api/scale";

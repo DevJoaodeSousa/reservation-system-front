@@ -44,7 +44,7 @@ export default function Home() {
               </div>
             </DrawerTrigger>
             <DrawerContent >
-              <div className="container mx-auto">
+              <div className="container mx-auto px-4">
 
                 <DrawerHeader>
                   <DrawerTitle>O que deseja fazer?</DrawerTitle>

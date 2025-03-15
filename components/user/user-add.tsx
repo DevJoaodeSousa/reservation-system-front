@@ -15,6 +15,11 @@ import {
     DrawerTrigger,
     DrawerClose,
     Message,
+    Select,
+    SelectTrigger,
+    SelectContent,
+    SelectValue,
+    SelectItem,
     Form, FormControl, FormField, FormItem, FormLabel, FormMessage
 } from "@/components/ui/"
 import { registerUser } from "@/app/__api/user"
@@ -92,30 +97,7 @@ export function UserAddForm({ refetch }: { refetch: () => void }) {
                                         </FormItem>
                                     )}
                                 />
-                                <FormField
-                                    control={form.control}
-                                    name="phone"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Celular (com DDD)</FormLabel>
-                                            <FormControl>
-                                                <Input
-                                                    placeholder="(47) 99123-4567"
-                                                    {...field}
-                                                    onChange={(e) => {
-                                                        const value = e.target.value
-                                                            .replace(/\D/g, "")
-                                                            .replace(/^(\d{2})(\d)/g, "($1) $2")
-                                                            .replace(/(\d{5})(\d)/, "$1-$2")
-                                                            .slice(0, 15)
-                                                        field.onChange(value)
-                                                    }}
-                                                />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
+
                                 <FormField
                                     control={form.control}
                                     name="email"
@@ -142,19 +124,59 @@ export function UserAddForm({ refetch }: { refetch: () => void }) {
                                         </FormItem>
                                     )}
                                 />
-                                <FormField
-                                    control={form.control}
-                                    name="role"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Cargo</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder="User ou admin" {...field} />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
+                                <div className="flex justify-between flex-row gap-4">
+
+                                    <FormField
+                                        control={form.control}
+                                        name="phone"
+                                        render={({ field }) => (
+                                            <FormItem className="w-1/2">
+                                                <FormLabel>Celular (com DDD)</FormLabel>
+                                                <FormControl>
+                                                    <Input
+                                                        placeholder="(47) 99123-4567"
+                                                        {...field}
+                                                        onChange={(e) => {
+                                                            const value = e.target.value
+                                                                .replace(/\D/g, "")
+                                                                .replace(/^(\d{2})(\d)/g, "($1) $2")
+                                                                .replace(/(\d{5})(\d)/, "$1-$2")
+                                                                .slice(0, 15)
+                                                            field.onChange(value)
+                                                        }}
+                                                    />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                    <FormField
+                                        control={form.control}
+                                        name="role"
+                                        render={({ field }) => (
+                                            <FormItem className="w-1/2">
+                                                <div className="mb-0">
+                                                    <FormLabel className="">Cargo</FormLabel>
+                                                </div>
+                                                <FormControl>
+                                                    <Select {...field} value={field.value} onValueChange={field.onChange} >
+                                                        <SelectTrigger className="w-1/2">
+                                                            <SelectValue placeholder="Selecione o Cargo" />
+                                                        </SelectTrigger>
+                                                        <SelectContent>
+                                                            <SelectItem value="user">Usuário</SelectItem>
+                                                            <SelectItem value="lider">Líder</SelectItem>
+                                                            <SelectItem value="staff">Staff</SelectItem>
+                                                        </SelectContent>
+                                                    </Select>
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+
+                                </div>
+
                                 <DrawerFooter className="border-t-2 pt-[16px] ">
                                     <div className="flex flex-col w-full gap-4">
                                         <Message success={success} error={error} />
