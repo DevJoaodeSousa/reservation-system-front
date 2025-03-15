@@ -43,7 +43,6 @@ export default function Login() {
       setIsLoading(false)
     }
   }
-  
   const handleWhatsApp = () => {
     window.open('https://wa.me/554792039515', '_blank')
   }
