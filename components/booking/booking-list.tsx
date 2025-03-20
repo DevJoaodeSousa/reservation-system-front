@@ -34,10 +34,6 @@ export function BookingList() {
         queryKey: ['bookings list'],
         queryFn: listBookings,
     });
-    const { data: mybookings, error: mybookingserror, isLoading: mybookingsloading, } = useQuery<ListBooking[]>({
-        queryKey: ['my bookings'],
-        queryFn: listBookingsMy,
-    });
     const { data: month, error: monthbookingserror, isLoading: monthbookingsloading, } = useQuery<ListBooking[]>({
         queryKey: ['month bookings'],
         queryFn: listBookingsMonth,
@@ -60,7 +56,6 @@ export function BookingList() {
                             <TabsTrigger value="semana" >Semana</TabsTrigger>
                             <TabsTrigger value="mes" >Mês</TabsTrigger>
                             <TabsTrigger value="tudo" >Tudo</TabsTrigger>
-                            <TabsTrigger value="my" >Minhas reservas</TabsTrigger>
                         </TabsList>
                     </div>
                     <div className='md:block hidden '>
@@ -83,9 +78,6 @@ export function BookingList() {
                 </TabsContent>
                 <TabsContent value="tudo">
                     <BookingItem data={bookings || []} />
-                </TabsContent>
-                <TabsContent value="my">
-                    <BookingItem data={mybookings || []} />
                 </TabsContent>
             </Tabs>
             <div style={{ height: 150, }}></div>
