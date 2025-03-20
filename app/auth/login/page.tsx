@@ -43,14 +43,13 @@ export default function Login() {
       setIsLoading(false)
     }
   }
-  
   const handleWhatsApp = () => {
     window.open('https://wa.me/554792039515', '_blank')
   }
 
   return (
     <div className="flex flex-col items-center justify-center bg-background w-full h-screen">
-      <Card className="w-[350px] self-center border-none shadow-none">
+      <Card className="w-full border-none shadow-none">
         <CardHeader>
           <Link href="/" className='w-full items-center self-center mx-auto flex flex-col justify-center'>
             <img src="/imgs/logo_black.png" className="w-[220px] h-[70px] bg-gray self-center items-center" />
@@ -85,7 +84,7 @@ export default function Login() {
               </div>
             </div>
           </form>
-          <div className="align-start flex space-x-2 mt-4">
+          <div className="align-start flex space-x-2 mt-4 items-center">
             <Checkbox onClick={() => setsession(!session)} id="terms1" />
             <div className="grid gap-1.5 leading-none">
               <label

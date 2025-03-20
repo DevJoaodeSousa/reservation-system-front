@@ -4,6 +4,21 @@ import { useQuery } from '@tanstack/react-query'
 import { listScales } from "@/app/__api/scale";
 import { Pagination, SingleScale } from "@/app/__api/types";
 import { ScaleList } from "@/components/scale/scale-list";
+import { Card } from "@/components/ui/card";
+import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+ 
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+    Button
+} from "@/components/ui/"
+
+
+
 
 export default function ScalesPage() {
 

@@ -1,8 +1,8 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { getToken } from "../hooks/token";
 
-const baseURL = "https://www.espacovidanova.com.br/api";
-//const baseURL = "http://localhost:8080";
+//const baseURL = "https://www.espacovidanova.com.br/api";
+const baseURL = "http://localhost:8080";
 
 interface FetchApiOptions extends AxiosRequestConfig {
   headers?: Record<string, string>;
