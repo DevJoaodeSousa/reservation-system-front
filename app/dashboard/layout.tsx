@@ -26,7 +26,6 @@ export default function DashLayout({ children }: { children: ReactNode }) {
     }
     verify();
   }, []);
-
   return (
     <div className='bg-background w-full flex '>
       <div className='flex flex-row z-20 bg-[#ffffff30] border-b  backdrop-blur-xs fixed left-0 right-0 top-0  px-4 py-2'>
