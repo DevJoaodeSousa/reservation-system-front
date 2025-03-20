@@ -16,7 +16,6 @@ import { AppSidebar } from '@/components/ui/sidebar';
 
 export default function DashLayout({ children }: { children: ReactNode }) {
   const router = useRouter()
-
   useEffect(() => {
     const verify = async () => {
       const res: any = await getUser();
