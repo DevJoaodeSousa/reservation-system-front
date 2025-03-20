@@ -151,7 +151,6 @@ const Scales = () => {
   return (
     <div>
       <h3 className="text-2xl font-semibold mt-4">Minhas escalas</h3>
-      <ScaleList data={myscales || []} refetch={refetch} />
     </div>
   );
 };
