@@ -18,8 +18,6 @@ import {
 } from "@/components/ui/"
 
 
-
-
 export default function ScalesPage() {
 
     const [page, setPage] = useState(1);
